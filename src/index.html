@@ -15,6 +15,11 @@
             clear: both;
         }
 
+        .container {
+            width: 1370px;
+            margin: 0 auto;
+        }
+
         .pull-left {
             float: left;
         }
@@ -67,6 +72,10 @@
         article tr td {
             width: 80px;
             height: 80px;
+            line-height: 80px;
+            text-align: center;
+            font-size: 50px;
+            font-weight: bold;
             border: 1px solid #000;
         }
 
@@ -75,7 +84,7 @@
             top: 0;
             right: 0;
             width: 30%;
-            height: 487px;
+            height: 486px;
             background: greenyellow;
         }
 
@@ -98,209 +107,223 @@
             border-left: none;
         }
 
-        .big,.big-btn {
+        .big,
+        .big-btn {
             color: red;
         }
 
-        .and,.and-btn {
-            color: skyblue;
-        }
-
-        .small,.small-btn {
+        .and,
+        .and-btn {
             color: green;
         }
-        .box,.control{
+
+        .small,
+        .small-btn {
+            color: blue;
+        }
+
+        .box,
+        .control {
             height: 120px;
             line-height: 120px;
             text-align: center;
-            border-bottom:1px solid #000;
+            border: 1px solid #000;
         }
-        .box button,.control button{
+
+        .box button,
+        .control button {
             width: 60px;
             height: 60px;
             background: transparent;
             font-size: 30px;
             font-weight: bold;
             outline: none;
-            border:none;
-            margin:0 10px;
-            border:1px solid #000;
-            border-radius:10px;
+            /* border: none; */
+            margin: 0 10px;
+            /* border: 1px solid #000; */
+            border-radius: 10px;
             transition: all 0.3s ease-in-out;
         }
-        .box button:hover{
+
+        /* .box button:hover {
             background: orange;
-        }
-        .control button{
+        } */
+
+        .control button {
             font-size: 20px;
         }
-        .time{
+        .sure-btn{
+            position: relative !important;
+            bottom: -38px;
+            right: 135px;
+           width: 80px !important;
+        }
+
+        .time {
             padding-top: 30px;
+            padding-bottom: 28px;
             text-align: center;
             font-size: 18px;
+            border: 1px solid #000;
         }
-        .time span{
+
+        .time span {
             font-size: 18px;
         }
+        /* img{
+            width: 60%;
+            height:60%;
+            position: relative;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%)
+        } */
     </style>
 </head>
 
 <body>
-    <header class="clearfix">
-        <div class="left pull-left">
-            <img src="img/jquery.png" alt="logo" class="logo">
-            <h1>大小记录单</h1>
-        </div>
-        <div class="right pull-right">桌号：1</div>
-    </header>
-    <section class="clearfix">
-        <article>
-            <table>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-
-
-                </tr>
-                <tr>
-
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-
-                </tr>
-                <tr>
-
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-
-                </tr>
-                <tr>
-
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-
-                </tr>
-
-            </table>
-        </article>
-        <aside>
-            <!-- <table>
-                <thead>
+    <div class="container">
+        <header class="clearfix">
+            <div class="left pull-left">
+                <img src="img/jquery.png" alt="logo" class="logo">
+                <h1>大小记录单</h1>
+            </div>
+            <div class="right pull-right">桌号：1</div>
+        </header>
+        <section class="clearfix">
+            <article>
+                <table>
                     <tr>
-                        <td>大</td>
-                        <td>和</td>
-                        <td>小</td>
+                        <td id="r1_1"></td>
+                        <td id="r2_1"></td>
+                        <td id="r3_1"></td>
+                        <td id="r4_1"></td>
+                        <td id="r5_1"></td>
+                        <td id="r6_1"></td>
+                        <td id="r7_1"></td>
+                        <td id="r8_1"></td>
+                        <td id="r9_1"></td>
+                        <td id="r10_1"></td>
+                        <td id="r11_1"></td>
+                        <td id="r12_1"></td>
+
                     </tr>
-                </thead>
-                <tbody>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td id="r1_2"></td>
+                        <td id="r2_2"></td>
+                        <td id="r3_2"></td>
+                        <td id="r4_2"></td>
+                        <td id="r5_2"></td>
+                        <td id="r6_2"></td>
+                        <td id="r7_2"></td>
+                        <td id="r8_2"></td>
+                        <td id="r9_2"></td>
+                        <td id="r10_2"></td>
+                        <td id="r11_2"></td>
+                        <td id="r12_2"></td>
+
                     </tr>
-                </tbody>
-            </table> -->
-            <ul class="clearfix">
-                <li class="big">大</li>
-                <li class="and">和</li>
-                <li class="small">小</li>
-            </ul>
-            <ul class="clearfix">
-                <li class="big-num">99</li>
-                <li class="and-num">99</li>
-                <li class="small-num">99</li>
-            </ul>
-            <div class="box">
-                <button class="big-btn">大</button>
-                <button class="and-btn">和</button>
-                <button class="small-btn">小</button>                
-            </div>
-            <div class="control">
-                <button class="start">开始</button>
-                <button class="stop">停止</button>
-                <button class="zero">归零</button>
-                <button class="error">纠错</button>                
-            </div>
-            <div class="time">
-                <span class="year"></span>-
-                <span class="month"></span>-              
-                <span class="day"></span> &nbsp;             
-                <span class="hour"></span>:
-                <span class="minute"></span>:
-                <span class="second"></span>              
-            </div>
-        </aside>
-    </section>
+                    <tr>
+                        <td id="r1_3"></td>
+                        <td id="r2_3"></td>
+                        <td id="r3_3"></td>
+                        <td id="r4_3"></td>
+                        <td id="r5_3"></td>
+                        <td id="r6_3"></td>
+                        <td id="r7_3"></td>
+                        <td id="r8_3"></td>
+                        <td id="r9_3"></td>
+                        <td id="r10_3"></td>
+                        <td id="r11_3"></td>
+                        <td id="r12_3"></td>
+
+
+                    </tr>
+                    <tr>
+
+                        <td id="r1_4"></td>
+                        <td id="r2_4"></td>
+                        <td id="r3_4"></td>
+                        <td id="r4_4"></td>
+                        <td id="r5_4"></td>
+                        <td id="r6_4"></td>
+                        <td id="r7_4"></td>
+                        <td id="r8_4"></td>
+                        <td id="r9_4"></td>
+                        <td id="r10_4"></td>
+                        <td id="r11_4"></td>
+                        <td id="r12_4"></td>
+
+                    </tr>
+                    <tr>
+
+                        <td id="r1_5"></td>
+                        <td id="r2_5"></td>
+                        <td id="r3_5"></td>
+                        <td id="r4_5"></td>
+                        <td id="r5_5"></td>
+                        <td id="r6_5"></td>
+                        <td id="r7_5"></td>
+                        <td id="r8_5"></td>
+                        <td id="r9_5"></td>
+                        <td id="r10_5"></td>
+                        <td id="r11_5"></td>
+                        <td id="r12_5"></td>
+
+                    </tr>
+                    <tr>
+
+                        <td id="r1_6"></td>
+                        <td id="r2_6"></td>
+                        <td id="r3_6"></td>
+                        <td id="r4_6"></td>
+                        <td id="r5_6"></td>
+                        <td id="r6_6"></td>
+                        <td id="r7_6"></td>
+                        <td id="r8_6"></td>
+                        <td id="r9_6"></td>
+                        <td id="r10_6"></td>
+                        <td id="r11_6"></td>
+                        <td id="r12_6"></td>
+
+                    </tr>
+
+                </table>
+            </article>
+            <aside>
+                <ul class="clearfix">
+                    <li class="big">大</li>
+                    <li class="and">和</li>
+                    <li class="small">小</li>
+                </ul>
+                <ul class="clearfix">
+                    <li class="big-num">0</li>
+                    <li class="and-num">0</li>
+                    <li class="small-num">0</li>
+                </ul>
+                <div class="box">
+                    <button class="big-btn">大</button>
+                    <button class="and-btn">和</button>
+                    <button class="small-btn">小</button>
+                    <button class="sure-btn">确认</button>                    
+                </div>
+                <div class="control">
+                    <button class="start">开始</button>
+                    <button class="stop">停止</button>
+                    <button class="zero">归零</button>
+                </div>
+                <div class="time">
+                    <span class="year"></span>-
+                    <span class="month"></span>-
+                    <span class="day"></span> &nbsp;
+                    <span class="hour"></span>:
+                    <span class="minute"></span>:
+                    <span class="second"></span>
+                </div>
+            </aside>
+        </section>
+    </div>
+
 
     <script src="js/jQuery.js"></script>
     <script src="js/index.js"></script>
