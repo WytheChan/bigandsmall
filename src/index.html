@@ -15,8 +15,12 @@
             clear: both;
         }
 
+        * {
+            box-sizing: border-box;
+        }
+
         .container {
-            width: 1370px;
+            width: 1330px;
             margin: 0 auto;
         }
 
@@ -29,9 +33,11 @@
         }
 
         header {
-            height: 50px;
-            line-height: 50px;
-            border: 1px solid #000;
+            position: relative;
+            height: 150px;
+            line-height: 150px;
+            border: 5px solid seagreen;
+            background: darkgreen;
         }
 
         header .left {
@@ -41,18 +47,38 @@
 
         header .left img {
             float: left;
-            padding: 15px 0 0 20px;
+            padding: 65px 0 0 20px;
         }
 
         header .left h1 {
-            font-size: 25px;
+            font-size: 35px;
             font-weight: bold;
+            color: #fff;
         }
 
         header .right {
+            position: relative;
             width: 30%;
             text-align: center;
-            font-size: 20px;
+        }
+
+        header .right p {
+            font-size: 30px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        header .right .time {
+            position: absolute;
+            top: 50px;
+            left: 20px;
+            text-align: center;
+            font-size: 18px;
+            color: #fff;
+        }
+
+        header .right .time span {
+            font-size: 18px;
             font-weight: bold;
         }
 
@@ -65,6 +91,7 @@
             top: 0;
             left: 0;
             width: 70%;
+            border: 10px solid darkgreen;
         }
 
         article tr {}
@@ -74,9 +101,9 @@
             height: 80px;
             line-height: 80px;
             text-align: center;
-            font-size: 50px;
+            font-size: 40px;
             font-weight: bold;
-            border: 1px solid #000;
+            border: 1px solid #999;
         }
 
         section aside {
@@ -84,8 +111,9 @@
             top: 0;
             right: 0;
             width: 30%;
-            height: 486px;
-            background: greenyellow;
+            height: 501px;
+            background: darkgreen;
+            border: 10px solid #084A00;
         }
 
         section aside ul {
@@ -108,76 +136,145 @@
         }
 
         .big,
-        .big-btn {
+        .big-btn,
+        .big-btn2 {
             color: red;
         }
 
         .and,
-        .and-btn {
+        .and-btn,
+        .and-btn2 {
             color: green;
         }
 
         .small,
-        .small-btn {
+        .small-btn,
+        .small-btn2 {
             color: blue;
         }
 
         .box,
         .control {
-            height: 120px;
-            line-height: 120px;
+            position: relative;
+            height: 130px;
             text-align: center;
             border: 1px solid #000;
+            padding-top: 10px;
         }
 
         .box button,
         .control button {
-            width: 60px;
-            height: 60px;
+            width: 70px;
+            height: 50px;
             background: transparent;
             font-size: 30px;
             font-weight: bold;
             outline: none;
-            /* border: none; */
             margin: 0 10px;
-            /* border: 1px solid #000; */
             border-radius: 10px;
             transition: all 0.3s ease-in-out;
         }
 
-        /* .box button:hover {
-            background: orange;
-        } */
+        .box>button.active {
+            background: dodgerblue;
+        }
+
+        .box .sure-btn {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            margin-left: -40px;
+            width: 80px;
+            height: 40px;
+            font-size: 25px;
+        }
+
+        .control {
+            padding-top: 0;
+            height: 120px;
+            line-height: 120px;
+        }
 
         .control button {
-            font-size: 20px;
-        }
-        .sure-btn{
-            position: relative !important;
-            bottom: -38px;
-            right: 135px;
-           width: 80px !important;
+            width: 70px;
+            height: 60px;
+            font-size: 25px;
         }
 
-        .time {
-            padding-top: 30px;
-            padding-bottom: 28px;
+        .count {
             text-align: center;
-            font-size: 18px;
-            border: 1px solid #000;
+            font-size: 30px;
+            font-weight: bold;
+            line-height: 60px;
         }
 
-        .time span {
-            font-size: 18px;
+        .count span {
+            display: inline-block;
+            font-size: 30px;
+            font-weight: bold;
         }
-        /* img{
-            width: 60%;
-            height:60%;
+
+        .mask {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, .3);
+            width: 100vw;
+            height: 100vh;
+            z-index: 999;
+        }
+
+        .mask .m-box {
             position: relative;
-            top:50%;
-            left:50%;
-            transform: translate(-50%,-50%)
-        } */
+            top: 100px;
+            width: 250px;
+            height: 150px;
+            margin: 0 auto;
+            background: darkgreen;
+            border-radius: 10px;
+        }
+
+        .mask .m-box p {
+            margin: 0 0 10px 0;
+            padding-top: 10px;
+            text-indent: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .mask .m-box button {
+            width: 60px;
+            height: 50px;
+            background: transparent;
+            font-size: 30px;
+            font-weight: bold;
+            outline: none;
+            margin: 0 10px;
+            border-radius: 10px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .mask .m-box button.active {
+            background: skyblue;
+        }
+
+        .mask .m-box .sure-btn2 {
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            margin-left: -40px;
+            width: 80px;
+            height: 40px;
+            font-size: 25px;
+        }
+
+        .music {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -999;
+        }
     </style>
 </head>
 
@@ -188,7 +285,23 @@
                 <img src="img/jquery.png" alt="logo" class="logo">
                 <h1>大小记录单</h1>
             </div>
-            <div class="right pull-right">桌号：1</div>
+            <div class="right pull-right">
+                <p>桌号：1</p>
+                <div class="time">
+                    现在时间是：
+                    <span class="year"></span>-
+                    <span class="month"></span>-
+                    <span class="day"></span> &nbsp;
+                    <span class="hour"></span>:
+                    <span class="minute"></span>:
+                    <span class="second"></span>
+                </div>
+            </div>
+            <div class="music">
+                <audio id="start-bgm" src="music/已开局请下注.wav"></audio>
+                <audio id="stop-bgm" src="music/停止下注.wav"></audio>
+                <audio id="time-bgm" src="music/最后10秒.wav"></audio>
+            </div>
         </header>
         <section class="clearfix">
             <article>
@@ -302,28 +415,31 @@
                     <li class="small-num">0</li>
                 </ul>
                 <div class="box">
-                    <button class="big-btn">大</button>
-                    <button class="and-btn">和</button>
-                    <button class="small-btn">小</button>
-                    <button class="sure-btn">确认</button>                    
+                    <button class="big-btn" disabled>大</button>
+                    <button class="and-btn" disabled>和</button>
+                    <button class="small-btn" disabled>小</button>
+                    <button class="sure-btn" disabled>确认</button>
                 </div>
                 <div class="control">
                     <button class="start">开始</button>
                     <button class="stop">停止</button>
                     <button class="zero">归零</button>
                 </div>
-                <div class="time">
-                    <span class="year"></span>-
-                    <span class="month"></span>-
-                    <span class="day"></span> &nbsp;
-                    <span class="hour"></span>:
-                    <span class="minute"></span>:
-                    <span class="second"></span>
+                <div class="count">
+                    还剩 &nbsp;<span>30</span> &nbsp;秒
                 </div>
             </aside>
         </section>
     </div>
-
+    <div class="mask">
+        <div class="m-box">
+            <p>修改为：</p>
+            <button class="big-btn2">大</button>
+            <button class="and-btn2">和</button>
+            <button class=" small-btn2">小</button>
+            <button class="sure-btn2">确认</button>
+        </div>
+    </div>
 
     <script src="js/jQuery.js"></script>
     <script src="js/index.js"></script>
